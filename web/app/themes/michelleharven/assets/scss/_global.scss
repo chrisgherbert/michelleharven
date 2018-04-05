@@ -2,10 +2,21 @@
 // Base Elements //
 ///////////////////
 
+html {
+	height: 100vh;
+}
+
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex-grow: 1;
 }
 
 img {

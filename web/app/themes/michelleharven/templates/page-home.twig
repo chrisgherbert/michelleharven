@@ -1,48 +1,95 @@
 {% extends "page.twig" %}
 
+{# {% block header_container %}{% endblock %} #}
+
 {% block content %}
 
-	<div class="container-fluid">
+	<div class="home-wrapper">
 
-		<div class="row">
+		{% if post.thumbnail %}
 
-			<div class="col-md-12">
+			<div class="home-wrapper__left">
 
-				<article class="the-content">
+				<img src="{{ post.thumbnail.src('large') }}" alt="Home Page Featured Image" class="home-image">
 
-					<h1>
-						{{ post.title }}
-					</h1>
+			</div>
 
-					{{ post.content }}
+		{% endif %}
 
-				</article>
+		<div class="home-wrapper__right">
 
-				{% if posts %}
+			<div class="home-wrapper__right-inner">
 
-					<ol>
+				{# {% include 'header/header.twig' %} #}
 
-						{% for post in posts %}
+				{% block page_header %}
 
-							<li>
-								<a href="{{ post.link }}" title="{{ post.title }}">
-									<h3>{{ post.title }}</h3>
-								</a>
-								<p>
-									{{ post.get_preview(30) }}
-								</p>
-							</li>
+					<div class="single-header">
 
-						{% endfor %}
+						<div class="container-fluid">
 
-					</ol>
+							<div class="single-title-container">
 
-				{% endif %}
+								{% block page_title %}
 
-			</div><!-- /.col-md-12 -->
+									<h1 class="single-title">
+										{{ post.title|default(title) }}
+									</h1>
 
-		</div><!-- /.row -->
+								{% endblock %}
 
-	</div><!-- /.container-fluid -->
+								{% block page_subtitle %}
+
+									{% if post.subtitle or subtitle %}
+										<div class="single-subtitle">
+											{{ post.subtitle|default(subtitle) }}
+										</div>
+									{% endif %}
+
+								{% endblock %}
+
+							</div>
+
+						</div>
+
+					</div>
+
+				{% endblock %}
+
+				{% block page_main %}
+
+					<div class="single-main">
+
+						<div class="container-fluid">
+
+							{% block page_before_content %}{% endblock %}
+
+							{% block page_main_content %}
+
+								{% if post.content %}
+
+									<div class="single-content the-content">
+
+										{{ post.content }}
+
+									</div>
+
+								{% endif %}
+
+							{% endblock %}
+
+							{% block page_after_content %}{% endblock %}
+
+						</div>
+
+					</div>
+
+				{% endblock %}
+
+			</div>
+
+		</div>
+
+	</div>
 
 {% endblock %}

@@ -24,12 +24,4 @@ $context['open_graph'] = array(
 	),
 );
 
-// Pull in current posts
-$context['posts'] = Timber::get_posts(
-	array(
-		'post_type' => 'post'
-	),
-	'Content\Post'
-);
-
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context, false, TimberLoader::CACHE_NONE );
+Timber::render( 'page-home.twig', $context, false, TimberLoader::CACHE_NONE );

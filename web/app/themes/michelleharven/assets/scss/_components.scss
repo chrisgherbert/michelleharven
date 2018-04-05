@@ -217,6 +217,38 @@
 }
 
 /**
+ * Home Page
+ */
+
+.home-wrapper {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	align-items: center;
+	padding: $spacing 0;
+}
+
+.home-wrapper__left {
+	padding: 0 $spacing/2;
+	flex-shrink: 1;
+	@include mq-small-max {
+		display: none;
+	}
+}
+
+.home-wrapper__right {
+	padding: 0 $spacing/2;
+}
+
+.home .single-header {
+	padding-top: 0;
+}
+
+.home .single-main {
+	padding-bottom: 0;
+}
+
+/**
  * Work Samples Pages
  */
 

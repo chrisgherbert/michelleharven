@@ -1,4 +1,4 @@
-# BAC WordPress Project Framework
+# MichelleHarven.com
 
 This is a modified version of [Bedrock](https://roots.io/bedrock/).  It maintains the same directory structure, but no longer requires that WordPress and all plugins be installed and maintained through Composer.  While keeping everything in Composer is great for projects that a developer has total control over and is able to maintain indefintiely, it is not always possible for client work.
 

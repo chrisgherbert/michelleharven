@@ -4,41 +4,25 @@
 
 		{% block footer_social %}
 
-			{% if site_options.social_facebook or site_options.social_twitter or site_options.social_youtube or site_options.social_linkedin %}
+			<div class="main-footer__top">
 
-				<div class="main-footer__top">
+				<div class="footer-social">
 
-					<div class="footer-social">
+					<a href="https://twitter.com/MichelleHarven" class="footer-social__link">
+						<i class="fa fa-twitter"></i> <span class="sr-only">Twitter</span>
+					</a>
 
-						{% if site_options.social_facebook %}
-							<a href="{{ site_options.social_facebook }}" class="footer-social__link">
-								<i class="fa fa-acebook"></i> <span class="sr-only">facebook</span>
-							</a>
-						{% endif %}
+					<a href="https://www.youtube.com/user/iamsoundmich" class="footer-social__link">
+						<i class="fa fa-youtube"></i> <span class="sr-only">YouTube</span>
+					</a>
 
-						{% if site_options.social_twitter %}
-							<a href="{{ site_options.social_twitter }}" class="footer-social__link">
-								<i class="fa fa-twitter"></i> <span class="sr-only">twitter</span>
-							</a>
-						{% endif %}
-
-						{% if site_options.social_youtube %}
-							<a href="{{ site_options.social_youtube }}" class="footer-social__link">
-								<i class="fa fa-youtube"></i> <span class="sr-only">youtube</span>
-							</a>
-						{% endif %}
-
-						{% if site_options.social_linkedin %}
-							<a href="{{ site_options.social_linkedin }}" class="footer-social__link">
-								<i class="fa fa-inkedin"></i> <span class="sr-only">linkedin</span>
-							</a>
-						{% endif %}
-
-					</div>
+					<a href="https://www.linkedin.com/in/michelle-harven-b94b984a/" class="footer-social__link">
+						<i class="fa fa-linkedin"></i> <span class="sr-only">LinkedIn</span>
+					</a>
 
 				</div>
 
-			{% endif %}
+			</div>
 
 		{% endblock %}
 

@@ -123,7 +123,7 @@
 }
 
 .main-footer__top {
-	padding: $spacing/2 0;
+	padding: $spacing/2 0 0 0;
 }
 
 .main-footer__bottom {
@@ -151,6 +151,27 @@
 	color: $text-color;
 	&:hover, &:active, &:focus {
 		color: $text-color;
+	}
+}
+
+/**
+ * Footer Social Links
+ */
+
+.footer-social__link {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	color: white;
+	background-color: $gray-light;
+	border-radius: 50%;
+	&:hover, &:active, &:focus {
+		color: white;
+		text-decoration: none;
+		background-color: darken($gray-light, 10%);
+		transform: scale(1.15);
 	}
 }
 

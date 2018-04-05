@@ -17,8 +17,8 @@ class CustomFields {
 	 * @var array
 	 */
 	protected $boxes = array(
-		// 'front',
-		// 'article',
+		'subtitle',
+		'work_sample'
 	);
 
 	/**
@@ -65,6 +65,53 @@ class CustomFields {
 		) );
 
 		$this->subtitle_field($cmb2);
+
+	}
+
+	public function subtitle() {
+
+		$cmb2 = new_cmb2_box( array(
+			'id' => 'subtitle',
+			'title' => 'Subtitle',
+			'object_types' => array('page')
+		) );
+
+		$cmb2->add_field( array(
+			'id' => 'subtitle',
+			'name' => 'Subtitle',
+			'type' => 'textarea_small',
+			'desc' => '(Optional) Enter a subtitle',
+		) );
+
+	}
+
+	public function work_sample(){
+
+		$cmb2 = new_cmb2_box(array(
+			'id' => 'work_sample',
+			'title' => 'Info',
+			'object_types' => array('work-sample')
+		));
+
+		$cmb2->add_field(array(
+			'id' => 'external_url',
+			'name' => 'URL',
+			'type' => 'text_url'
+		));
+
+		$cmb2->add_field(array(
+			'id' => 'publication',
+			'name' => 'Publication Name',
+			'type' => 'text'
+		));
+
+		$cmb2->add_field(array(
+			'id' => 'work_type_term',
+			'name' => 'Work Type',
+			'type' => 'taxonomy_radio',
+			'taxonomy' => 'work-sample-type',
+			'remove_default' => true
+		));
 
 	}
 

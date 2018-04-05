@@ -53,7 +53,7 @@ $brand-danger:          #d9534f !default;
 //** Background color for `<body>`.
 $body-bg:               #fff;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark;
+$text-color:            black;
 
 //** Global textual link color.
 $link-color:            $brand-primary;
@@ -68,12 +68,12 @@ $link-hover-decoration: underline;
 //## Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:  'league_spartanregular', sans-serif !default;
-$font-family-serif:       "Cardo", georgia, serif;
+$font-family-serif:       "Merriweather", georgia, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-serif;
 
-$font-size-base:          22px !default;
+$font-size-base:          21px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -91,7 +91,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    $font-family-sans-serif;
-$headings-font-weight:    700;
+$headings-font-weight:    400;
 $headings-line-height:    1.2;
 $headings-color:          inherit !default;
 
@@ -376,7 +376,7 @@ $container-desktop:            (940px + $grid-gutter-width) !default;
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-large-desktop:      (940px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 

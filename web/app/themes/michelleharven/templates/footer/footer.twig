@@ -2,8 +2,69 @@
 
 	<div class="container-fluid">
 
-		Copyright {{ "now"|date("Y") }} {{ site.name }}. All Rights Reserved.
+		{% block footer_social %}
 
-	</div><!-- /.container -->
+			{% if site_options.social_facebook or site_options.social_twitter or site_options.social_youtube or site_options.social_linkedin %}
+
+				<div class="main-footer__top">
+
+					<div class="footer-social">
+
+						{% if site_options.social_facebook %}
+							<a href="{{ site_options.social_facebook }}" class="footer-social__link">
+								<i class="fa fa-acebook"></i> <span class="sr-only">facebook</span>
+							</a>
+						{% endif %}
+
+						{% if site_options.social_twitter %}
+							<a href="{{ site_options.social_twitter }}" class="footer-social__link">
+								<i class="fa fa-twitter"></i> <span class="sr-only">twitter</span>
+							</a>
+						{% endif %}
+
+						{% if site_options.social_youtube %}
+							<a href="{{ site_options.social_youtube }}" class="footer-social__link">
+								<i class="fa fa-youtube"></i> <span class="sr-only">youtube</span>
+							</a>
+						{% endif %}
+
+						{% if site_options.social_linkedin %}
+							<a href="{{ site_options.social_linkedin }}" class="footer-social__link">
+								<i class="fa fa-inkedin"></i> <span class="sr-only">linkedin</span>
+							</a>
+						{% endif %}
+
+					</div>
+
+				</div>
+
+			{% endif %}
+
+		{% endblock %}
+
+		{% if footer_menu %}
+
+			<div class="main-footer__bottom">
+
+				<nav class="footer-menu" role="navigation">
+					<ul class="footer-menu__list">
+						<li class="footer-menu__item">
+							&copy; {{ 'now'|date('Y') }} Michelle Harven
+						</li>
+						{% for item in footer_menu.items %}
+							<li class="footer-menu__item {{ item.classes|join(' ') }}">
+								<a class="footer-menu__link" href="{{ item.url }}">
+									{{ item.title }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</nav>
+
+			</div>
+
+		{% endif %}
+
+	</div>
 
 </footer>

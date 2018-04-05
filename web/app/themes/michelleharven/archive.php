@@ -33,9 +33,16 @@ if ( is_day() ) {
 } else if ( is_post_type_archive() ) {
 	$context['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+} else if ( is_tax('work-sample-type')){
+	$context['title'] = single_term_title( '', false );
+	$context['subtitle'] = 'Work Samples';
+	array_unshift( $templates, 'archive-' . get_query_var( 'term' ) . '.twig' );
 }
 
 $context['posts'] = Timber::get_posts(false, 'Content\Post');
+
+error_log(count($context['posts']));
+
 $context['pagination'] = Timber::get_pagination();
 
 Timber::render( $templates, $context );

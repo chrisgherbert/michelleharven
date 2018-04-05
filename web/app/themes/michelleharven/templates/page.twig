@@ -1,14 +1,69 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
+
+	{% block page_header %}
+
+		<div class="single-header">
+
+			<div class="container-fluid">
+
+				<div class="single-title-container">
+
+					{% block page_title %}
+
+						<h1 class="single-title">
+							{{ post.title|default(title) }}
+						</h1>
+
+					{% endblock %}
+
+					{% block page_subtitle %}
+
+						{% if post.subtitle or subtitle %}
+							<div class="single-subtitle">
+								{{ post.subtitle|default(subtitle) }}
+							</div>
+						{% endif %}
+
+					{% endblock %}
+
 				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+
+			</div>
+
+		</div>
+
+	{% endblock %}
+
+	{% block page_main %}
+
+		<div class="single-main">
+
+			<div class="container-fluid">
+
+				{% block page_before_content %}{% endblock %}
+
+				{% block page_main_content %}
+
+					{% if post.content %}
+
+						<div class="single-content the-content">
+
+							{{ post.content }}
+
+						</div>
+
+					{% endif %}
+
+				{% endblock %}
+
+				{% block page_after_content %}{% endblock %}
+
+			</div>
+
+		</div>
+
+	{% endblock %}
+
 {% endblock %}

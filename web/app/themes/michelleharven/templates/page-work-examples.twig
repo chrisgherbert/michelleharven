@@ -1,0 +1,77 @@
+{% extends 'page.twig' %}
+
+{% block page_after_content %}
+
+	<div class="section constrained-width">
+
+		<div class="work-sample-anchors">
+
+			{% for term in work_sample_types %}
+
+				<a class="rounded-button" href="#work-sample-type-{{ term.slug }}">
+					{{ term.name }}
+				</a>
+
+			{% endfor %}
+
+		</div>
+
+	</div>
+
+	<div class="work-sample-sections constrained-width">
+
+		{% for term in work_sample_types %}
+
+			<div class="work-sample-section section--tight" id="work-sample-type-{{ term.slug }}">
+
+				<h3 class="section-heading">
+					{{ term.name }}
+				</h3>
+
+				<ul class="work-samples-list">
+
+					{% for item in term.posts(6, 'work-sample') %}
+
+						<li class="work-sample">
+
+							<div class="work-sample__left">
+								<a href="{{ item.external_url }}">
+									<div class="work-sample__image" {% if item.thumbnail %} style="background-image: url('{{ item.thumbnail.src('medium') }}')" {% endif %}></div>
+								</a>
+							</div>
+
+							<div class="work-sample__body">
+
+								<h4 class="work-sample__title">
+									<a href="{{ item.external_url }}">
+										{{ item.title }}
+									</a>
+								</h4>
+
+								{% if item.publication %}
+									<div class="work-sample__meta">
+										{{ item.publication }}
+									</div>
+								{% endif %}
+
+							</div>
+
+						</li>
+
+					{% endfor %}
+
+				</ul>
+
+				<div class="text-center">
+					<a href="{{ site.link }}/work-sample-type/{{ term.slug }}" class="rounded-button more-link">
+						+ All {{ term.name }}
+					</a>
+				</div>
+
+			</div>
+
+		{% endfor %}
+
+	</div>
+
+{% endblock %}

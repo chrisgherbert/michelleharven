@@ -15,6 +15,18 @@
 	}
 }
 
+/**
+ * Typography
+ */
+
+@mixin standard-ui-text {
+	font-family: $font-family-sans-serif;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 4px;
+	font-size: 13px;
+}
+
 ///////////
 // Links //
 ///////////

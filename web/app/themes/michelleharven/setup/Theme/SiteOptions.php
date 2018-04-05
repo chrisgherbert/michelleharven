@@ -142,6 +142,11 @@ class SiteOptions {
 			'name' => 'Facebook Profile URL'
 		));
 		$cmb->add_field(array(
+			'id' => $box_key . '_youtube',
+			'type' => 'text_url',
+			'name' => 'YouTube Channel URL'
+		));
+		$cmb->add_field(array(
 			'id' => $box_key . '_linkedin',
 			'type' => 'text_url',
 			'name' => 'LinkedIn Profile URL'

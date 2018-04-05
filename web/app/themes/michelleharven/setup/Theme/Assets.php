@@ -41,7 +41,7 @@ class Assets {
 
 		// Web Fonts
 		wp_enqueue_style('font-league-spartan', get_template_directory_uri() . '/assets/fonts/league-spartan/stylesheet.css');
-		wp_enqueue_style('font-cardo', 'https://fonts.googleapis.com/css?family=Cardo:400,400i,700');
+		wp_enqueue_style('font-cardo', 'https://fonts.googleapis.com/css?family=Merriweather:400,400i,700');
 
 	}
 

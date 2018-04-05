@@ -1,0 +1,43 @@
+{% extends "page.twig" %}
+
+{% block page_main_content %}
+
+	<div class="constrained-width">
+
+		<ul class="work-samples-list">
+
+			{% for item in posts %}
+
+				<li class="work-sample">
+
+					<div class="work-sample__left">
+						<a href="{{ item.external_url }}">
+							<div class="work-sample__image" {% if item.thumbnail %} style="background-image: url('{{ item.thumbnail.src('medium') }}')" {% endif %}></div>
+						</a>
+					</div>
+
+					<div class="work-sample__body">
+
+						<h4 class="work-sample__title">
+							<a href="{{ item.external_url }}">
+								{{ item.title }}
+							</a>
+						</h4>
+
+						{% if item.publication %}
+							<div class="work-sample__meta">
+								{{ item.publication }}
+							</div>
+						{% endif %}
+
+					</div>
+
+				</li>
+
+			{% endfor %}
+
+		</ul>
+
+	</div>
+
+{% endblock %}

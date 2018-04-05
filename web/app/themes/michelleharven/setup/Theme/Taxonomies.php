@@ -10,7 +10,7 @@ namespace Theme;
 class Taxonomies {
 
 	protected $taxonomies = array(
-		// 'department',
+		'work_sample_type'
 	);
 
 	public function __construct(){
@@ -31,6 +31,24 @@ class Taxonomies {
 	////////////////
 	// Taxonomies //
 	////////////////
+
+	public function work_sample_type(){
+
+		register_via_taxonomy_core(
+			array(
+				'Work Type',
+				'Work Types',
+				'work-sample-type'
+			),
+			array(
+				'description' => 'The type of work',
+				'show_admin_column' => true,
+				'query_var' => true
+			),
+			array('work-sample')
+		);
+
+	}
 
 	public function department(){
 

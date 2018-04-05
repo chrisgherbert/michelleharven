@@ -64,6 +64,18 @@
 	}
 }
 
+.rounded-button--primary {
+	background-color: $brand-primary;
+	&:hover, &:active, &:focus {
+		background-color: darken($brand-primary, 15%);
+		color: white;
+		text-decoration: none;
+	}
+	&:active {
+		background-color: darken($brand-primary, 25%);
+	}
+}
+
 /**
  * Containers
  */

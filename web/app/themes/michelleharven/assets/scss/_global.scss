@@ -13,6 +13,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+	@include mq-xsmall-max {
+		font-size: $font-size-small;
+	}
 }
 
 .main {

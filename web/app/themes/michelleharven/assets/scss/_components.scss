@@ -11,10 +11,16 @@
 
 .section {
 	padding: $spacing 0;
+	@include mq-xsmall-max {
+		padding: $spacing/2 0;
+	}
 }
 
 .section--tight {
 	padding: $spacing/2 0;
+	@include mq-xsmall-max {
+		padding: $spacing/3 0;
+	}
 }
 
 /**
@@ -26,6 +32,9 @@
 	overflow: hidden;
 	margin-bottom: $spacing;
 	font-size: 16px;
+	&:first-child {
+		margin-top: 0;
+	}
 	&:after {
 		border-top: 4px dotted black;
 		content: "";
@@ -45,6 +54,8 @@
 
 .rounded-button {
 	@include standard-ui-text;
+	display: inline-block;
+	margin-bottom: 8px;
 	background-color: $text-color;
 	color: white;
 	text-transform: none;
@@ -61,6 +72,12 @@
 	}
 	&:not(:last-child){
 		margin-right: $spacing/4;
+	}
+	@include mq-xsmall-max {
+		padding: 10px 25px;
+		&:not(:last-child){
+			margin-right: 8px;
+		}
 	}
 }
 
@@ -96,6 +113,9 @@
 .main-header {
 	border-top: 13px solid $brand-primary;
 	padding-top: $spacing;
+	@include mq-xsmall-max {
+		padding-top: $spacing/2;
+	}
 }
 
 .main-menu {
@@ -111,6 +131,9 @@
 			content: '·';
 			color: black;
 			opacity: 0.35;
+			@include mq-xsmall-max {
+				padding: 0 $spacing/7;
+			}
 		}
 	}
 }
@@ -202,11 +225,17 @@
 .single-header {
 	text-align: center;
 	padding: $spacing 0;
+	@include mq-xsmall-max {
+		padding: $spacing/1.5 0;
+	}
 }
 
 .single-title {
 	font-size: 60px;
 	margin: 0;
+	@include mq-xsmall-max {
+		font-size: 35px;
+	}
 }
 
 .single-subtitle {
@@ -230,6 +259,9 @@
 	margin: 0 auto;
 	align-items: center;
 	padding: $spacing 0;
+	@include mq-xsmall-max {
+		padding: $spacing/1.5 0;
+	}
 }
 
 .home-wrapper__left {
@@ -242,6 +274,9 @@
 
 .home-wrapper__right {
 	padding: 0 $spacing/2;
+	@include mq-xsmall-max {
+		padding: 0;
+	}
 }
 
 .home .single-header {
@@ -258,6 +293,9 @@
 
 .work-sample-anchors {
 	text-align: center;
+	@include mq-xsmall-max {
+		text-align: left;
+	}
 }
 
 .work-samples-list {
@@ -279,6 +317,11 @@
 	background-position: center center;
 	margin-right: $spacing/2;
 	background-image: url('../assets/img/placeholder-image.svg');
+	@include mq-xsmall-max {
+		width: 60px;
+		height: 60px;
+		margin-right: $spacing/3;
+	}
 }
 
 .work-sample__title, .work-sample__title a {
@@ -287,6 +330,10 @@
 	font-weight: 700;
 	color: $text-color;
 	font-family: $font-family-serif;
+	@include mq-xsmall-max {
+		margin: 0 0 $spacing/6 0;
+		font-size: $font-size-small;
+	}
 }
 
 .work-sample__meta {
@@ -296,7 +343,9 @@
 	color: $brand-primary;
 	font-size: $font-size-small*0.85;
 	color: lighten($gray-light, 20%);
-
+	@include mq-xsmall-max {
+		font-size: $font-size-small*0.7;
+	}
 }
 
 /**
@@ -323,12 +372,18 @@
 	display: flex;
 	font-family: $font-family-serif;
 	align-items: flex-end;
+	@include mq-xsmall-max {
+		display: block;
+	}
 }
 
 .resume__employer {
 	font-size: $font-size-base*1.1;
 	flex-grow: 1;
 	font-weight: 700;
+	@include mq-xsmall-max {
+		margin-bottom: 10px;
+	}
 }
 
 .resume__duration {
@@ -344,5 +399,8 @@
 
 .resume__entry-description {
 	font-size: $font-size-small;
+	@include mq-xsmall-max {
+		font-size: $font-size-small*0.9;
+	}
 }
 

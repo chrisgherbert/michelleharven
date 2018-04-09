@@ -15,4 +15,8 @@ class Post extends ExtendedTimberClasses\Post {
 		return 'hello!';
 	}
 
+	public function cf_field($key){
+		return carbon_get_post_meta($this->ID, $key);
+	}
+
 }

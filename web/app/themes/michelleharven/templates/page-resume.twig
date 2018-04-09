@@ -1,0 +1,167 @@
+{% extends 'page.twig' %}
+
+{% block page_after_content %}
+
+	<div class="resume__content constrained-width constrained-width--wider">
+
+		{% if post.cf_field('journalism_experience_items') %}
+
+			<h2 class="resume__heading">
+				Journalism Experience
+			</h2>
+
+			<ul class="resume__entries">
+
+				{% for item in post.cf_field('journalism_experience_items') %}
+
+					<li class="resume__entry">
+
+						<h3 class="resume__entry-heading">
+
+							<div class="resume__employer">
+								{{ item.employer_name }}
+							</div>
+
+							<div class="resume__duration">
+								{{ item.duration }}
+							</div>
+
+						</h3>
+
+						{% if item.job_title %}
+							<h4 class="resume__job-title">
+								{{ item.job_title }}
+							</h4>
+						{% endif %}
+
+						{% if item.description %}
+
+							<div class="resume__entry-description the-content">
+								{{ item.description|apply_filters('the_content') }}
+							</div>
+
+						{% endif %}
+
+					</li>
+
+				{% endfor %}
+
+			</ul>
+
+		{% endif %}
+
+		{% if post.cf_field('additional_experience_items') %}
+
+			<h2 class="resume__heading">
+				Additional Experience
+			</h2>
+
+			<ul class="resume__entries">
+
+				{% for item in post.cf_field('additional_experience_items') %}
+
+					<li class="resume__entry">
+
+						<h3 class="resume__entry-heading">
+
+							<div class="resume__employer">
+								{{ item.employer_name }}
+							</div>
+
+							<div class="resume__duration">
+								{{ item.duration }}
+							</div>
+
+						</h3>
+
+						{% if item.job_title %}
+							<h4 class="resume__job-title">
+								{{ item.job_title }}
+							</h4>
+						{% endif %}
+
+						{% if item.description %}
+
+							<div class="resume__entry-description the-content">
+								{{ item.description|apply_filters('the_content') }}
+							</div>
+
+						{% endif %}
+
+					</li>
+
+				{% endfor %}
+
+			</ul>
+
+		{% endif %}
+
+		{% if post.cf_field('education_items') %}
+
+			<h2 class="resume__heading">
+				Education
+			</h2>
+
+			<ul class="resume__entries">
+
+				{% for item in post.cf_field('education_items') %}
+
+					<li class="resume__entry">
+
+						<h3 class="resume__entry-heading">
+
+							<div class="resume__employer">
+								{{ item.employer_name }}
+							</div>
+
+							<div class="resume__duration">
+								{{ item.duration }}
+							</div>
+
+						</h3>
+
+						{% if item.job_title %}
+							<h4 class="resume__job-title">
+								{{ item.job_title }}
+							</h4>
+						{% endif %}
+
+						{% if item.description %}
+
+							<div class="resume__entry-description the-content">
+								{{ item.description|apply_filters('the_content') }}
+							</div>
+
+						{% endif %}
+
+					</li>
+
+				{% endfor %}
+
+			</ul>
+
+		{% endif %}
+
+		{% if post.cf_field('skills') %}
+
+			<h2 class="resume__heading">
+				Skills
+			</h2>
+
+			<ul class="resume__skills">
+
+				{% for item in post.cf_field('skills') %}
+
+					<li class="resume__skill">
+						{{ item.skill }}
+					</li>
+
+				{% endfor %}
+
+			</ul>
+
+		{% endif %}
+
+	</div>
+
+{% endblock %}

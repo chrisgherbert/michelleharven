@@ -27,3 +27,4 @@ deploy-to-*.php
 .phpintel
 .phpintel/
 /.phpintel/index
+/web/app/carbon-fields-files

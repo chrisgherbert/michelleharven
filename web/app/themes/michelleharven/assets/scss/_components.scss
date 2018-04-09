@@ -85,6 +85,10 @@
 	margin: 0 auto;
 }
 
+.constrained-width--wider {
+	max-width: 800px;
+}
+
 /**
  * Main Header
  */
@@ -294,3 +298,51 @@
 	color: lighten($gray-light, 20%);
 
 }
+
+/**
+ * Resume
+ */
+
+.resume__heading {
+	@include standard-ui-text;
+	border-top: 3px solid $text-color;
+	padding-top: $spacing/6;
+	margin-bottom: $spacing/1.5;
+	&:not(:first-child){
+		margin-top: $spacing*1.5;
+	}
+}
+
+.resume__entry {
+	&:not(:last-child){
+		margin-bottom: $spacing/1.5;
+	}
+}
+
+.resume__entry-heading {
+	display: flex;
+	font-family: $font-family-serif;
+	align-items: flex-end;
+}
+
+.resume__employer {
+	font-size: $font-size-base*1.1;
+	flex-grow: 1;
+	font-weight: 700;
+}
+
+.resume__duration {
+	font-size: $font-size-small;
+	color: rgba(black, 0.5);
+}
+
+.resume__job-title {
+	font-family: $font-family-serif;
+	font-style: italic;
+	font-size: $font-size-base;
+}
+
+.resume__entry-description {
+	font-size: $font-size-small;
+}
+

@@ -121,6 +121,7 @@
 .main-menu {
 	@include standard-ui-text;
 	text-align: center;
+
 }
 
 .main-menu__item {
@@ -132,7 +133,7 @@
 			color: black;
 			opacity: 0.35;
 			@include mq-xsmall-max {
-				padding: 0 $spacing/7;
+				padding: 0 2px;
 			}
 		}
 	}
